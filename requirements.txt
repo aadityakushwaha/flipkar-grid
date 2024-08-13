@@ -1,0 +1,4 @@
+Flask==2.3.2
+Flask-Migrate==4.0.5
+SQLAlchemy
+flask_socketio
