@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=sqlite:///api_security.db
+    depends_on:
+      - vulserver
+
+  vulserver:
+    build:
+      context: .
+      dockerfile: Dockerfile-vulserver
+    ports:
+      - "5003:5003"
